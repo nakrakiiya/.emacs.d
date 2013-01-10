@@ -3,7 +3,9 @@
 #################
 
 *.elc
-
+eshell/*
+ede-projects.el
+.smex-items
 
 #################
 ## normal
