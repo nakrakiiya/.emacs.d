@@ -31,7 +31,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono" :foundry "outline" :slant normal :weight normal :height 95 :width normal))))
+ '(default ((t (:family "Ubuntu Mono" :foundry "outline" :slant normal :weight normal :height 110 :width normal))))
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
