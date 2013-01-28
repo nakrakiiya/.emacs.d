@@ -32,7 +32,7 @@ MERCURY_SOURCE_DIR=~/source/mercury-compiler-11.07.2
 
 MERCURY-TAGS:
 	touch $@
-	find $(MERCURY_SOURCE_DIR)/library -type f -name '*.m' | xargs mtags -e
+	find $(MERCURY_SOURCE_DIR)/ -type f -name '*.m' | xargs mtags -e
 	mv TAGS $@
 
 
