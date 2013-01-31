@@ -210,7 +210,7 @@
        ;; For jumping to Ciao system's libraries:
        '(".*\\.pl$" "~/.emacs.d/tags/CIAO-TAGS")
        ;; For jumping to ECLiPSe system's libraries
-       '(".*\\.ecl$" "~/sys-tags/eclipse/TAGS")
+       '(".*\\.ecl$" "~/.emacs.d/tags/ECLIPSE-TAGS")
        ;; '(".*\\.pl$" "~/sys-tags/eclipse/TAGS")
        ;; For jumping to C system's libraries
        ;; '(".*\\.[ch]$" "~/sys-tags/c/TAGS")  <-- always crashes
