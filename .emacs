@@ -248,7 +248,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(Info-additional-directory-list (quote ()))
+ '(Info-additional-directory-list (quote nil))
  '(ac-ignore-case t)
  '(ac-modes (quote (slime-repl-mode emacs-lisp-mode lisp-interaction-mode c-mode cc-mode c++-mode java-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode slime-mode lisp-mode prolog-mode prolog-inferior-mode ciao-mode mercury-mode xsb-mode eclipse-mode)))
  '(ac-use-menu-map t)
@@ -276,7 +276,7 @@
  '(ecb-split-edit-window-after-start nil)
  '(ecb-tip-of-the-day nil)
  '(ecb-windows-width 0.2)
- '(ede-project-directories (quote ()))
+ '(ede-project-directories (quote nil))
  '(global-auto-highlight-symbol-mode t)
  '(global-linum-mode t)
  '(global-semantic-decoration-mode t nil (semantic-decorate-mode))
@@ -294,6 +294,7 @@
  '(home-end-enable t)
  '(indicate-empty-lines t)
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(scroll-bar-mode (quote right))
  '(semantic-edits-verbose-flag nil)
  '(semantic-idle-summary-function (quote semantic-format-tag-summarize-with-file))
  '(semantic-idle-work-parse-neighboring-files-flag t)
