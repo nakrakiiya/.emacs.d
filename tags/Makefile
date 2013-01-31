@@ -1,4 +1,4 @@
-all: XSB-TAGS CIAO-TAGS SWI-TAGS MERCURY-TAGS
+all: XSB-TAGS CIAO-TAGS SWI-TAGS MERCURY-TAGS ECLIPSE-TAGS
 
 # XSB 3.3.7
 
@@ -35,12 +35,18 @@ MERCURY-TAGS:
 	find $(MERCURY_SOURCE_DIR)/ -type f -name '*.m' | xargs mtags -e
 	mv TAGS $@
 
+# ECLiPSe 6.0.199
 
+ECLIPSE_ROOT_DIR=~/Eclipse_6.0_199
 
-
+ECLIPSE-TAGS:
+	touch $@
+	find $(ECLIPSE_ROOT_DIR)/lib -type f -name '*.pl' -o -name '*.ecl' | xargs etags -a -l prolog -o $@
+	find $(ECLIPSE_ROOT_DIR)/lib_tcl -type f -name '*.pl' -o -name '*.ecl' | xargs etags -a -l prolog -o $@
+	find $(ECLIPSE_ROOT_DIR)/lib_public -type f -name '*.pl' -o -name '*.ecl' | xargs etags -a -l prolog -o $@
 
 
 clean:
-	rm *TAGS *~
+	rm -fv *TAGS *~
 
 .PHONY: clean
