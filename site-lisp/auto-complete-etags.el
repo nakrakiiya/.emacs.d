@@ -51,7 +51,7 @@
                     (all-completions ac-target (tags-completion-table))))
     (candidate-face . ac-etags-candidate-face)
     (selection-face . ac-etags-selection-face)
-    (requires . 3))
+    (requires . 2))
   "Source for etags.")
 
 
