@@ -1,4 +1,4 @@
-all: XSB-TAGS CIAO-TAGS SWI-TAGS MERCURY-TAGS ECLIPSE-TAGS
+all: XSB-TAGS CIAO-TAGS SWI-TAGS MERCURY-TAGS ECLIPSE-TAGS YAP-TAGS
 
 # XSB 3.3.7
 
@@ -6,6 +6,14 @@ XSB_ROOT_DIR=~/xsb/3.3.7
 
 XSB-TAGS:
 	find $(XSB_ROOT_DIR)/packages -type f -name '*.P' | xargs etags -l prolog -o $@
+
+# YAP 6.2.2
+
+YAP_LIB_DIR=/usr/share/Yap
+
+YAP-TAGS:
+	find $(YAP_LIB_DIR) -type f | xargs etags -l prolog -o $@
+
 
 # Ciao 1.14
 CIAO_ROOT_DIR=~/CiaoDE
