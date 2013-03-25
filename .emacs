@@ -31,7 +31,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Ubuntu Mono" :foundry "outline" :slant normal :weight normal :height 110 :width normal))))
+ '(default ((t (:family "M+ 2m" :foundry "outline" :slant normal :weight normal :height 110 :width normal))))
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
@@ -48,7 +48,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; slime
 (setq inferior-lisp-program "~/ccl/lx86cl64")
+;; (setq inferior-lisp-program "/usr/bin/ecl")
+;; (setq inferior-lisp-program "~/sbcl/bin/sbcl")
 ;; (setq inferior-lisp-program "/usr/bin/clisp")
+;; (setq inferior-lisp-program "~/acl82/alisp")
 (setq common-lisp-hyperspec-root (expand-file-name "~/.emacs.d/clhs7/HyperSpec/"))
 (slime-setup '(slime-fancy)) ; almost everything
 
@@ -98,10 +101,12 @@
 (autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
 (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
 (autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
-(setq prolog-system 'xsb)  ; optional, the system you are using;
+(setq prolog-system 'yap)  ; optional, the system you are using;
                            ; see `prolog-system' below for possible values
-(setq auto-mode-alist (append '(("\\.pl$" . xsb-mode) ; default to xsb
+(setq prolog-program-name "/usr/bin/yap")
+(setq auto-mode-alist (append '(("\\.pl$" . prolog-mode) ; default to what ?
                                 ("\\.m$" . mercury-mode)
+                                ("\\.yap$" . prolog-mode)
                                 ("\\.P$" . xsb-mode) ;; <-- for XSB only
                                 ;; ("\\.ecl$" . prolog-mode) ;; <-- for ECLiPSe only
                                 )
@@ -207,8 +212,10 @@
        '(".*\\.m" "~/.emacs.d/tags/MERCURY-TAGS")
        ;; For jumping to XSB system's libraries:
        '(".*\\.P$" "~/.emacs.d/tags/XSB-TAGS")
-       ;; For jumping to Ciao system's libraries:
-       '(".*\\.pl$" "~/.emacs.d/tags/CIAO-TAGS")
+       ;; For jumping to YAP's libraries:
+       '(".*\\.pl$" "~/.emacs.d/tags/YAP-TAGS")
+       ;; For jumping to yap's libraries:
+       '(".*\\.yap$" "~/.emacs.d/tags/YAP-TAGS")
        ;; For jumping to ECLiPSe system's libraries
        '(".*\\.ecl$" "~/.emacs.d/tags/ECLIPSE-TAGS")
        ;; '(".*\\.pl$" "~/sys-tags/eclipse/TAGS")
@@ -259,7 +266,7 @@
  '(cua-mode t nil (cua-base))
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes (quote (zenburn)))
- '(custom-safe-themes (quote ("be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" default)))
+ '(custom-safe-themes (quote ("f5e56ac232ff858afb08294fc3a519652ce8a165272e3c65165c42d6fe0262a0" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" default)))
  '(ecb-auto-activate t)
  '(ecb-clear-caches-before-activate nil)
  '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*") ("*slime-events*") ("*inferior-lisp*") ("*prolog*"))))
@@ -363,8 +370,3 @@
 ;;;; End of goodies
 
 (ecb-activate)
-
-
-; Load CiaoDE 1.14.2 (disabled due to incomplete)
-;(if (file-exists-p "~/.emacs.d/CiaoDE-1.14/lib/ciao/ciao-mode-init.el")
-;    (load-file "~/.emacs.d/CiaoDE-1.14/lib/ciao/ciao-mode-init.el"))
