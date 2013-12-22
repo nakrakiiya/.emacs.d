@@ -31,7 +31,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "M+ 2m" :foundry "outline" :slant normal :weight normal :height 110 :width normal))))
+ '(default ((t (:family "CosmicSansNeueMono" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
@@ -47,10 +47,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; slime
-(setq inferior-lisp-program "~/ccl/lx86cl64")
+;; (setq inferior-lisp-program "~/ccl/lx86cl64") 
 ;; (setq inferior-lisp-program "/usr/bin/ecl")
 ;; (setq inferior-lisp-program "~/sbcl/bin/sbcl")
-;; (setq inferior-lisp-program "/usr/bin/clisp")
+(setq inferior-lisp-program "/usr/bin/clisp")
 ;; (setq inferior-lisp-program "~/acl82/alisp")
 (setq common-lisp-hyperspec-root (expand-file-name "~/.emacs.d/clhs7/HyperSpec/"))
 (slime-setup '(slime-fancy)) ; almost everything
@@ -118,6 +118,13 @@
 (autoload 'eclipse-esp-mode "eclipse.el" "ECLiPSe-ESP editing mode" t)
 (setq auto-mode-alist (cons '("\\.ecl" . eclipse-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.esp" . eclipse-esp-mode) auto-mode-alist))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; mercury debugger
+(add-to-list 'load-path 
+	"/usr/lib/mercury/elisp")
+(autoload 'mdb "gud" "Invoke the Mercury debugger" t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -314,7 +321,8 @@
  '(slime-complete-symbol*-fancy t)
  '(slime-kill-without-query-p t)
  '(slime-net-coding-system (quote utf-8-unix))
- '(slime-when-complete-filename-expand t))
+ '(slime-when-complete-filename-expand t)
+ '(x-select-enable-primary t))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
