@@ -244,18 +244,23 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-complete-etags
 (require 'auto-complete-etags)
+(require 'auto-complete-etags-mercury)
 ;; (add-to-list 'ac-sources 'ac-source-etags)
 ;; (setq ac-etags-use-document t)
 
 (defun add-ac-source-etags ()
   (add-to-list 'ac-sources 'ac-source-etags))
 
-(add-hook 'prolog-mode-hook 'add-ac-source-etags)
-(add-hook 'eclipse-mode-hook 'add-ac-source-etags)
+(defun add-prolog-ac-source-etags ()
+  (if (eq 'mercury prolog-system)
+      (add-to-list 'ac-sources 'ac-source-etags-mercury)
+    (add-to-list 'ac-sources 'ac-source-etags)))
+
+(add-hook 'prolog-mode-hook 'add-prolog-ac-source-etags)
+(add-hook 'eclipse-mode-hook 'add-prolog-ac-source-etags)
 
 (require 'auto-complete-etags-docs)
 (aced-update-ac-source-etags)
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -322,7 +327,7 @@
  '(slime-kill-without-query-p t)
  '(slime-net-coding-system (quote utf-8-unix))
  '(slime-when-complete-filename-expand t)
- '(x-select-enable-primary t))
+ '(x-select-enable-primary nil))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

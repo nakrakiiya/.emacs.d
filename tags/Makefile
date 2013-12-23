@@ -34,13 +34,13 @@ SWI-TAGS:
 	find $(SWI_ROOT_DIR)/lib/swipl-6.0.2/library -type f -name '*.pl' | xargs etags -a -l prolog -o $@
 	find $(SWI_ROOT_DIR)/lib/swipl-6.0.2/xpce -type f -name '*.pl' | xargs etags -a -l prolog -o $@
 
-# Mercury 11.07.2
+# Mercury 13.05.2
 
-MERCURY_SOURCE_DIR=~/source/mercury-compiler-11.07.2
+MERCURY_SOURCE_DIR=~/source/mercury-srcdist-13.05.2
 
 MERCURY-TAGS:
 	touch $@
-	find $(MERCURY_SOURCE_DIR)/ -type f -name '*.m' | xargs mtags -e
+	mtags -e `find $(MERCURY_SOURCE_DIR)/ -type f -name '*.m'`
 	mv TAGS $@
 
 # ECLiPSe 6.0.199
