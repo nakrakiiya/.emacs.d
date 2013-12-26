@@ -314,6 +314,7 @@
  '(indicate-empty-lines t)
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode (quote right))
+ '(select-active-regions (quote only))
  '(semantic-edits-verbose-flag nil)
  '(semantic-idle-summary-function (quote semantic-format-tag-summarize-with-file))
  '(semantic-idle-work-parse-neighboring-files-flag t)
@@ -326,8 +327,7 @@
  '(slime-complete-symbol*-fancy t)
  '(slime-kill-without-query-p t)
  '(slime-net-coding-system (quote utf-8-unix))
- '(slime-when-complete-filename-expand t)
- '(x-select-enable-primary nil))
+ '(slime-when-complete-filename-expand t))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
