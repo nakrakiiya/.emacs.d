@@ -31,7 +31,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "CosmicSansNeueMono" :foundry "unknown" :slant normal :weight normal :height 120 :width normal))))
+ '(default ((t (:family "CosmicSansNeueMono" :foundry "unknown" :slant normal :weight bold :height 120 :width normal))))
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
@@ -125,6 +125,40 @@
 (add-to-list 'load-path 
 	"/usr/lib/mercury/elisp")
 (autoload 'mdb "gud" "Invoke the Mercury debugger" t)
+
+;; =================== Mercury setup ====================
+(require 'flymake)
+(require 'flymake-checkers)
+(require 'flycheck)
+(require 'flymake-cursor)
+(require 'flycheck-mercury)
+
+(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+
+(defvar *flymake-mercury-checker* "~/.emacs.d/mercury-support/mercury-checker.sh")
+
+(push '("\\([^:]*\\):\\([0-9]+\\):[0-9]+: \\(.*\\)" 1 2 nil 3) flymake-err-line-patterns)
+
+(defun flymake-mercury-init ()
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                     'flymake-create-temp-inplace))
+         (local-file (file-relative-name
+                      temp-file
+                      (file-name-directory buffer-file-name))))
+    (list *flymake-mercury-checker* (list local-file))))
+
+(add-to-list 'flymake-allowed-file-name-masks '("\\.m" flymake-mercury-init nil flymake-get-real-file-name))
+
+;; (add-hook 'mercury-mode-hook
+;;           '(lambda ()
+;;              (if (not (null buffer-file-name)) (flymake-mode))))
+
+(add-hook 'prolog-mode-hook
+          '(lambda ()
+             (if (eq 'mercury prolog-system)
+                 (if (not (null buffer-file-name)) (flymake-mode)))))
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -275,10 +309,13 @@
  '(ahs-modes (quote (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode slime-mode slime-repl-mode lisp-mode mercury-mode)))
  '(ahs-suppress-log nil)
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(background-color "#002b36")
+ '(background-mode dark)
  '(cua-mode t nil (cua-base))
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes (quote (zenburn)))
- '(custom-safe-themes (quote ("f5e56ac232ff858afb08294fc3a519652ce8a165272e3c65165c42d6fe0262a0" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" default)))
+ '(cursor-color "#839496")
+ '(custom-enabled-themes (quote (solarized-dark)))
+ '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "9370aeac615012366188359cb05011aea721c73e1cb194798bc18576025cabeb" "f5e56ac232ff858afb08294fc3a519652ce8a165272e3c65165c42d6fe0262a0" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" default)))
  '(ecb-auto-activate t)
  '(ecb-clear-caches-before-activate nil)
  '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*") ("*slime-events*") ("*inferior-lisp*") ("*prolog*"))))
@@ -296,6 +333,8 @@
  '(ecb-tip-of-the-day nil)
  '(ecb-windows-width 0.2)
  '(ede-project-directories (quote nil))
+ '(fci-rule-color "#383838")
+ '(foreground-color "#839496")
  '(global-auto-highlight-symbol-mode t)
  '(global-linum-mode t)
  '(global-semantic-decoration-mode t nil (semantic-decorate-mode))
@@ -312,7 +351,7 @@
  '(grep-scroll-output t)
  '(home-end-enable t)
  '(indicate-empty-lines t)
- '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode (quote right))
  '(select-active-regions (quote only))
  '(semantic-edits-verbose-flag nil)
@@ -327,7 +366,10 @@
  '(slime-complete-symbol*-fancy t)
  '(slime-kill-without-query-p t)
  '(slime-net-coding-system (quote utf-8-unix))
- '(slime-when-complete-filename-expand t))
+ '(slime-when-complete-filename-expand t)
+ '(vc-annotate-background "#2B2B2B")
+ '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3"))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
