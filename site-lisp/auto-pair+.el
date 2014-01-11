@@ -432,7 +432,7 @@ f <- function(x){
                 (if (> (- (max pos-before p1 p2) (point)) (- (point) (min pos-before p1 p2)))
                     (goto-char (min pos-before p1 p2))
                   (goto-char (+ 2 (max pos-before p1 p2))))))
-              (autopair-blink))
+              (autopair--blink))
             (setq autopair-action nil))
            (;; automatically insert quote delimiter on region.
             ;; Use a function to quote the region.
@@ -490,7 +490,7 @@ f <- function(x){
               (forward-char (+ 2 len))
               (when strp 
                 (save-excursion (insert (format autopair-quote-string (string pair)))))
-              (autopair-blink))
+              (autopair--blink))
             (setq autopair-action nil)
             ))))
     (error
@@ -504,7 +504,7 @@ f <- function(x){
              (and (eq 'opening action)
                   (not (eq pair (char-before))))
              (insert pair)
-             (autopair-blink)
+             (autopair--blink)
              (backward-char 1))
             (;; automatically insert closing quote delimiter
              (eq 'insert-quote action)
@@ -536,7 +536,7 @@ f <- function(x){
                    (when strp
                      (backward-char 1)))
                  (unless (and strp (looking-at "[ \t]*$")) ;; Don't move backwards if just inserted a single quote.
-                   (autopair-blink)
+                   (autopair--blink)
                    (backward-char 1)))))
             (;; automatically skip open closer quote delimiter
              (and (eq 'skip-quote action)
@@ -553,7 +553,7 @@ f <- function(x){
                           (or autopair-skip-whitespace-but-dont-delete autopair-skip-whitespace))
                  (setq skipped (save-excursion (skip-chars-forward "\s\n\t"))))
                (when (eq autopair-inserted (char-after (+ (point) skipped)))
-                 (unless (zerop skipped) (autopair-blink (+ (point) skipped)))
+                 (unless (zerop skipped) (autopair--blink (+ (point) skipped)))
                  (if (zerop skipped)
                      (progn (backward-char 1) (delete-char 1) (forward-char))
                    (if autopair-skip-whitespace
