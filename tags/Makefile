@@ -36,7 +36,7 @@ SWI-TAGS:
 
 # Mercury 13.05.2
 
-MERCURY_SOURCE_DIR=~/source/mercury-srcdist-13.05.2
+MERCURY_SOURCE_DIR=~/source/packaging/mercury-srcdist-14.01
 
 MERCURY-TAGS:
 	touch $@

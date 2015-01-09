@@ -54,8 +54,8 @@
 ;; slime
 ;; (setq inferior-lisp-program "~/ccl/lx86cl64") 
 ;; (setq inferior-lisp-program "/usr/bin/ecl")
-;; (setq inferior-lisp-program "~/sbcl/bin/sbcl")
-(setq inferior-lisp-program "/usr/bin/clisp")
+(setq inferior-lisp-program "~/sbcl/bin/sbcl")
+;; (setq inferior-lisp-program "/usr/bin/clisp")
 ;; (setq inferior-lisp-program "~/acl82/alisp")
 (setq common-lisp-hyperspec-root (expand-file-name "~/.emacs.d/clhs7/HyperSpec/"))
 (slime-setup '(slime-fancy)) ; almost everything
@@ -106,9 +106,9 @@
 (autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
 (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
 (autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
-(setq prolog-system 'yap)  ; optional, the system you are using;
+(setq prolog-system 'swi)  ; optional, the system you are using;
                            ; see `prolog-system' below for possible values
-(setq prolog-program-name "/usr/bin/yap")
+(setq prolog-program-name "/usr/bin/swipl")
 (setq auto-mode-alist (append '(("\\.pl$" . prolog-mode) ; default to what ?
                                 ("\\.m$" . mercury-mode)
                                 ("\\.yap$" . prolog-mode)
@@ -207,7 +207,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; rainbow delimiters
-(global-rainbow-delimiters-mode)
+;; (global-rainbow-delimiters-mode)    obsoleet
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; autopair
