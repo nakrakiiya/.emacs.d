@@ -308,23 +308,50 @@
  ;; If there is more than one, they won't work right.
  '(Info-additional-directory-list (quote nil))
  '(ac-ignore-case t)
- '(ac-modes (quote (slime-repl-mode emacs-lisp-mode lisp-interaction-mode c-mode cc-mode c++-mode java-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode slime-mode lisp-mode prolog-mode prolog-inferior-mode ciao-mode mercury-mode xsb-mode eclipse-mode)))
+ '(ac-modes
+   (quote
+    (slime-repl-mode emacs-lisp-mode lisp-interaction-mode c-mode cc-mode c++-mode java-mode clojure-mode scala-mode scheme-mode ocaml-mode tuareg-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode slime-mode lisp-mode prolog-mode prolog-inferior-mode ciao-mode mercury-mode xsb-mode eclipse-mode)))
  '(ac-use-menu-map t)
  '(ac-use-overriding-local-map t)
- '(ahs-modes (quote (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode slime-mode slime-repl-mode lisp-mode mercury-mode)))
+ '(ahs-modes
+   (quote
+    (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode slime-mode slime-repl-mode lisp-mode mercury-mode)))
  '(ahs-suppress-log nil)
- '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(background-color "#002b36")
  '(background-mode dark)
  '(cua-mode t nil (cua-base))
  '(current-language-environment "UTF-8")
  '(cursor-color "#839496")
  '(custom-enabled-themes (quote (alect-light)))
- '(custom-safe-themes (quote ("7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "5e3fc08bcadce4c6785fc49be686a4a82a356db569f55d411258984e952f194a" "a0feb1322de9e26a4d209d1cfa236deaf64662bb604fa513cca6a057ddf0ef64" "ab04c00a7e48ad784b52f34aa6bfa1e80d0c3fcacc50e1189af3651013eb0d58" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "9370aeac615012366188359cb05011aea721c73e1cb194798bc18576025cabeb" "f5e56ac232ff858afb08294fc3a519652ce8a165272e3c65165c42d6fe0262a0" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" default)))
+ '(custom-safe-themes
+   (quote
+    ("7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "5e3fc08bcadce4c6785fc49be686a4a82a356db569f55d411258984e952f194a" "a0feb1322de9e26a4d209d1cfa236deaf64662bb604fa513cca6a057ddf0ef64" "ab04c00a7e48ad784b52f34aa6bfa1e80d0c3fcacc50e1189af3651013eb0d58" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "9370aeac615012366188359cb05011aea721c73e1cb194798bc18576025cabeb" "f5e56ac232ff858afb08294fc3a519652ce8a165272e3c65165c42d6fe0262a0" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" default)))
  '(ecb-auto-activate t)
  '(ecb-clear-caches-before-activate nil)
- '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*") ("*slime-events*") ("*inferior-lisp*") ("*prolog*"))))
+ '(ecb-compilation-buffer-names
+   (quote
+    (("*Calculator*")
+     ("*vc*")
+     ("*vc-diff*")
+     ("*Apropos*")
+     ("*Occur*")
+     ("*shell*")
+     ("\\*[cC]ompilation.*\\*" . t)
+     ("\\*i?grep.*\\*" . t)
+     ("*JDEE Compile Server*")
+     ("*Help*")
+     ("*Completions*")
+     ("*Backtrace*")
+     ("*Compile-log*")
+     ("*bsh*")
+     ("*Messages*")
+     ("*slime-events*")
+     ("*inferior-lisp*")
+     ("*prolog*"))))
  '(ecb-compilation-major-modes (quote (compilation-mode slime-repl-mode)))
  '(ecb-compile-window-height 0.3)
  '(ecb-compile-window-width (quote edit-window))
@@ -357,7 +384,13 @@
  '(grep-scroll-output t)
  '(home-end-enable t)
  '(indicate-empty-lines t)
- '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(package-archives
+   (quote
+    (("marmalade" . "http://marmalade-repo.org/packages/")
+     ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(package-selected-packages
+   (quote
+    (zenburn-theme zen-and-art-theme yaml-mode wc-mode waher-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme tronesque-theme toxi-theme tangotango-theme tabbar svg-mode-line-themes sunny-day-theme subatomic-theme subatomic-enhanced-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme smex smart-tab slime sea-before-storm-theme sass-mode rainbow-mode rainbow-delimiters purple-haze-theme pos-tip pastels-on-dark-theme paredit ntcmd monokai-theme moe-theme markdown-mode magit leuven-theme less-css-mode late-night-theme ir-black-theme info+ ido-ubiquitous idle-highlight-mode highlight-parentheses highlight-indentation heroku-theme hemisu-theme helm-themes gruvbox-theme gruber-darker-theme graphviz-dot-mode grandshell-theme github-theme gandalf-theme flymake-easy flymake-cursor flymake-checkers flycheck-tip flycheck-mercury flycheck-color-mode-line flatland-theme find-file-in-project etags-table etags-select espresso-theme elisp-slime-nav ecb dired+ deep-thought-theme dakrone-theme cygwin-mount cyberpunk-theme ctags-update ctags company colorsarenice-theme color-theme-solarized coffee-mode clues-theme bubbleberry-theme birds-of-paradise-plus-theme bash-completion autopair auto-complete auto-compile assemblage-theme anything-exuberant-ctags anything-complete anything anti-zenburn-theme ample-zen-theme ample-theme all alect-themes afternoon-theme ac-slime)))
  '(scroll-bar-mode (quote right))
  '(select-active-regions (quote only))
  '(semantic-edits-verbose-flag nil)
@@ -366,15 +399,34 @@
  '(semantic-idle-work-update-headers-flag t)
  '(semantic-tag-folding-show-tooltips t)
  '(show-paren-mode t)
- '(slime-auto-connect (quote always))
  '(slime-auto-select-connection (quote always))
+ '(slime-auto-start (quote always))
  '(slime-autodoc-use-multiline-p t)
  '(slime-complete-symbol*-fancy t)
  '(slime-kill-without-query-p t)
  '(slime-net-coding-system (quote utf-8-unix))
  '(slime-when-complete-filename-expand t)
  '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#BC8383")
+     (40 . "#CC9393")
+     (60 . "#DFAF8F")
+     (80 . "#D0BF8F")
+     (100 . "#E0CF9F")
+     (120 . "#F0DFAF")
+     (140 . "#5F7F5F")
+     (160 . "#7F9F7F")
+     (180 . "#8FB28F")
+     (200 . "#9FC59F")
+     (220 . "#AFD8AF")
+     (240 . "#BFEBBF")
+     (260 . "#93E0E3")
+     (280 . "#6CA0A3")
+     (300 . "#7CB8BB")
+     (320 . "#8CD0D3")
+     (340 . "#94BFF3")
+     (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3"))
 
 
@@ -431,3 +483,6 @@
 ;;;; End of goodies
 
 (ecb-activate)
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line
