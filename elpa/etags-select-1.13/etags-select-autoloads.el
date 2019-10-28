@@ -1,14 +1,10 @@
 ;;; etags-select-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads (etags-select-find-tag etags-select-find-tag-at-point
-;;;;;;  etags-select-go-if-unambiguous etags-select-use-short-name-completion
-;;;;;;  etags-select-highlight-delay etags-select-highlight-tag-after-jump
-;;;;;;  etags-select-mode-hook etags-select-no-select-for-one-match
-;;;;;;  etags-select-mode) "etags-select" "etags-select.el" (20640
-;;;;;;  31606 0 0))
+;;;### (autoloads nil "etags-select" "etags-select.el" (23990 57228
+;;;;;;  135611 358000))
 ;;; Generated autoloads from etags-select.el
 
 (let ((loads (get 'etags-select-mode 'custom-loads))) (if (member '"etags-select" loads) nil (put 'etags-select-mode 'custom-loads (cons '"etags-select" loads))))
@@ -70,16 +66,9 @@ to do.
 
 ;;;***
 
-;;;### (autoloads nil nil ("etags-select-pkg.el") (20640 31606 343000
-;;;;;;  0))
-
-;;;***
-
-(provide 'etags-select-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; etags-select-autoloads.el ends here

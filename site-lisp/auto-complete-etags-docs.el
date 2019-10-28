@@ -28,7 +28,7 @@
 
 ;;; Code:
 
-(require 'auto-complete-etags)
+(require 'ac-etags)
 (require 'etags-select)
 (require 'cl)
 
