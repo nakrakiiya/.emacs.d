@@ -6,6 +6,7 @@
 eshell/*
 ede-projects.el
 .smex-items
+recentf
 
 #################
 ## normal
