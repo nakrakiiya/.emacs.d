@@ -397,7 +397,7 @@
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(package-selected-packages
    (quote
-    (tree-mode ecb etags-table etags-select highlight-indentation autopair highlight-parentheses auto-highlight-symbol flymake-cursor iedit flycheck-ocaml flycheck-mercury flycheck ac-slime ac-etags slime-company slime powerline company-coq proof-general)))
+    (tabbar tree-mode ecb etags-table etags-select highlight-indentation autopair highlight-parentheses auto-highlight-symbol flymake-cursor iedit flycheck-ocaml flycheck-mercury flycheck ac-slime ac-etags slime-company slime powerline company-coq proof-general)))
  '(require-final-newline t)
  '(scroll-bar-mode (quote right))
  '(select-active-regions (quote only))
@@ -453,6 +453,24 @@
 ;;;; Some goodies
 (global-set-key (kbd "C-x C-b") 'bs-show)         ; Using BufferSelection for switching between buffers.
 ;;;; End of goodies
+
+
+;; tabbar again
+(defun tabbar-buffer-groups ()
+  "Return the list of group names the current buffer belongs to.
+ This function is a custom function for tabbar-mode's tabbar-buffer-groups.
+ This function group all buffers into 2 groups, depending to the result value of `ecb-compilation-buffer-p'.
+This allows grouping in eclipse style."
+  (cond
+   ((ecb-compilation-buffer-p (buffer-name))
+    '("Compilation Buffers")
+    )
+   (t
+    '("Editing Buffers")
+    )
+   ))
+(setq tabbar-buffer-groups-function 'tabbar-buffer-groups)  
+(tabbar-mode)
 
 (global-ede-mode)
 (ecb-activate)
