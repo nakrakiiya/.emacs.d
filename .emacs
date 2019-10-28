@@ -60,7 +60,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; unicad -- guess file encoding
-(require 'unicad)
+;;(require 'unicad)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; grep+
@@ -352,7 +352,8 @@
      ("*Messages*")
      ("*slime-events*")
      ("*inferior-lisp*")
-     ("*prolog*"))))
+     ("*prolog*")
+     ("*response*"))))
  '(ecb-compilation-major-modes (quote (compilation-mode slime-repl-mode)))
  '(ecb-compile-window-height 0.3)
  '(ecb-compile-window-width (quote edit-window))
