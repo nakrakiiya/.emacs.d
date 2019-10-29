@@ -1,8 +1,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Notes: OCaml, Coq (maybe more packages)
-;; opam install merlin
+;; opam install merlin caml-mode
 ;; opam install tuareg
+;; opam install utop 
 ;;
 ;; # update emacs configurations
 ;; opam user-setup install      
