@@ -4,7 +4,7 @@
 
 ;; Author: James Ferguson <(concat "wjcferguson" at-sign "gmail.com")>
 ;; URL: https://github.com/WJCFerguson/emacs-faff-theme
-;; Package-Version: 20191018.2049
+;; Package-Version: 20191028.1846
 ;; Version: 2.6
 ;; Keywords: color theme
 
@@ -81,7 +81,7 @@
  '(link-visited ((default (:inherit (link))) (((class color) (background light)) (:foreground "magenta4")) (((class color) (background dark)) (:foreground "violet"))))
  '(ein:cell-input-area ((t (:background "cornsilk2"))) t)
  '(fringe ((t (:inherit default :background "cornsilk3"))))
- '(header-line ((t (:inherit mode-line :background "cornsilk2" :box nil))))
+ '(header-line ((t (:inherit mode-line :background "cornsilk4" :weight bold))))
  '(js2-external-variable ((t (:foreground "orange3"))))
  '(js2-function-call ((t (:inherit font-lock-function-name-face))))
  '(js2-jsdoc-type ((t (:inherit font-lock-type-face))))
@@ -91,8 +91,8 @@
  '(mode-line ((t (:background "gold" :foreground "black" :box nil))))
  '(mode-line-buffer-id ((t (:weight bold))))
  '(mode-line-emphasis ((t (:weight bold))))
- '(mode-line-highlight ((((class color) (min-colors 88)) (:box (:line-width 2 :color "grey40" :style released-button))) (t (:inherit (highlight)))))
- '(mode-line-inactive ((t (:inherit mode-line :background "grey40" :foreground "black" :box nil :weight light))))
+ '(mode-line-highlight ((((class color) (min-colors 88)) (:box (:line-width 2 :color "cornsilk4" :style released-button))) (t (:inherit (highlight)))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "cornsilk4" :foreground "black" :box nil :weight light))))
  '(isearch ((((class color) (min-colors 88) (background light)) (:foreground "lightskyblue1" :background "magenta3")) (((class color) (min-colors 88) (background dark)) (:foreground "brown4" :background "palevioletred2")) (((class color) (min-colors 16)) (:foreground "cyan1" :background "magenta4")) (((class color) (min-colors 8)) (:foreground "cyan1" :background "magenta4")) (t (:inverse-video t))))
  '(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
  '(lazy-highlight ((((class color) (min-colors 88) (background light)) (:background "paleturquoise")) (((class color) (min-colors 88) (background dark)) (:background "paleturquoise4")) (((class color) (min-colors 16)) (:background "turquoise3")) (((class color) (min-colors 8)) (:background "turquoise3")) (t (:underline (:color foreground-color :style line)))))
@@ -190,10 +190,10 @@
  '(warning ((t (:foreground "DarkOrange3" :weight bold))))
  '(whitespace-hspace ((t (:background "LemonChiffon1"))))
  '(whitespace-line ((t (:background "yellow2"))))
- '(whitespace-newline ((t (:background "ivory2" :foreground "ivory4" :weight normal))))
- '(whitespace-space ((t (:foreground "ivory2"))))
- '(window-divider-first-pixel ((t (:foreground "ivory2"))))
- '(window-divider-last-pixel ((t (:foreground "ivory4")))))
+ '(whitespace-newline ((t (:background "cornsilk2" :foreground "cornsilk4" :weight normal))))
+ '(whitespace-space ((t (:foreground "cornsilk2"))))
+ '(window-divider-first-pixel ((t (:foreground "cornsilk2"))))
+ '(window-divider-last-pixel ((t (:foreground "cornsilk4")))))
 
 ;;;###autoload
 (when load-file-name

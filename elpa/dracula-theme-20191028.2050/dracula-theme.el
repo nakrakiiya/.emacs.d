@@ -6,7 +6,7 @@
 
 ;; Author: film42
 ;; Version: 1.5.1
-;; Package-Version: 20191022.2033
+;; Package-Version: 20191028.2050
 ;; Package-Requires: ((emacs "24"))
 ;; URL: https://github.com/dracula/emacs
 
@@ -42,24 +42,23 @@
       (faces '(;; default
                (cursor :background ,fg3)
                (default :background ,dracula-bg :foreground ,dracula-fg)
-               (default-italic :italic t)
+               (default-italic :slant italic)
                (ffap :foreground ,fg4)
                (fringe :background ,dracula-bg :foreground ,fg4)
                (highlight :foreground ,fg3 :background ,bg3)
-               (hl-line :background  ,dracula-current :extend t)
+               (hl-line :background ,dracula-current :extend t)
                (info-quoted-name :foreground ,dracula-orange)
                (info-string :foreground ,dracula-yellow)
                (lazy-highlight :foreground ,fg2 :background ,bg3)
                (link :foreground ,dracula-cyan :underline t)
                (linum :slant italic :foreground ,bg4 :background ,dracula-bg)
                (line-number :slant italic :foreground ,bg4 :background ,dracula-bg)
-               (minibuffer-prompt :bold t :foreground ,dracula-pink)
+               (minibuffer-prompt :weight bold :foreground ,dracula-pink)
                (region :background ,dracula-yellow :foreground ,dracula-bg :extend t)
-               (show-paren-match-face :background ,dracula-orange)
                (trailing-whitespace :foreground nil :background ,dracula-orange)
+               (whitespace-trailing :inherit trailing-whitespace)
                (vertical-border :foreground ,bg2)
                (warning :foreground ,dracula-orange)
-               (whitespace-trailing :inherit trailing-whitespace)
                (header-line :background ,dracula-bg)
                ;; syntax
                (font-lock-builtin-face :foreground ,dracula-orange)
@@ -67,8 +66,8 @@
                (font-lock-comment-delimiter-face :foreground ,dracula-comment)
                (font-lock-constant-face :foreground ,dracula-cyan)
                (font-lock-doc-face :foreground ,dracula-comment)
-               (font-lock-function-name-face :foreground ,dracula-green :bold t)
-               (font-lock-keyword-face :bold t :foreground ,dracula-pink)
+               (font-lock-function-name-face :foreground ,dracula-green :weight bold)
+               (font-lock-keyword-face :weight bold :foreground ,dracula-pink)
                (font-lock-negation-char-face :foreground ,dracula-cyan)
                (font-lock-preprocessor-face :foreground ,dracula-orange)
                (font-lock-reference-face :foreground ,dracula-cyan)
@@ -78,6 +77,11 @@
                (font-lock-type-face :foreground ,dracula-purple)
                (font-lock-variable-name-face :foreground ,dracula-fg)
                (font-lock-warning-face :foreground ,dracula-orange :background ,bg2)
+               ;; show-paren
+               (show-paren-match-face :inherit font-lock-warning-face)
+               (show-paren-match :inherit font-lock-warning-face)
+               (show-paren-match-expression :inherit region)
+               (show-paren-mismatch :background ,bg2 :foreground ,dracula-red)
                ;; auto-complete
                (ac-completion-face :underline t :foreground ,dracula-pink)
                ;; company
@@ -88,9 +92,9 @@
                (company-scrollbar-bg :background ,bg3)
                (company-scrollbar-fg :foreground ,dracula-pink)
                (company-template-field :inherit region)
-               (company-tooltip :foreground ,fg2 :background ,dracula-bg :bold t)
+               (company-tooltip :foreground ,fg2 :background ,dracula-bg :weight bold)
                (company-tooltip-annotation :foreground ,dracula-cyan)
-               (company-tooltip-common  :foreground ,fg3)
+               (company-tooltip-common :foreground ,fg3)
                (company-tooltip-common-selection :foreground ,dracula-yellow)
                (company-tooltip-mouse :inherit highlight)
                (company-tooltip-selection :background ,bg3 :foreground ,fg3)
@@ -105,37 +109,37 @@
                (enh-ruby-string-delimiter-face :foreground ,dracula-yellow)
                ;; font-latex
                (font-latex-bold-face :foreground ,dracula-purple)
-               (font-latex-italic-face :foreground ,dracula-pink :italic t)
+               (font-latex-italic-face :foreground ,dracula-pink :slant italic)
                (font-latex-match-reference-keywords :foreground ,dracula-cyan)
                (font-latex-match-variable-keywords :foreground ,dracula-fg)
                (font-latex-string-face :foreground ,dracula-yellow)
                ;; gnus-group
-               (gnus-group-mail-1 :foreground ,dracula-pink :bold t)
-               (gnus-group-mail-1-empty :inherit gnus-group-mail-1 :bold nil)
-               (gnus-group-mail-2 :foreground ,dracula-cyan :bold t)
-               (gnus-group-mail-2-empty :inherit gnus-group-mail-2 :bold nil)
-               (gnus-group-mail-3 :foreground ,dracula-comment :bold t)
-               (gnus-group-mail-3-empty :inherit gnus-group-mail-3 :bold nil)
-               (gnus-group-mail-low :foreground ,dracula-current :bold t)
-               (gnus-group-mail-low-empty :inherit gnus-group-mail-low :bold nil)
-               (gnus-group-news-1 :foreground ,dracula-pink :bold t)
-               (gnus-group-news-1-empty :inherit gnus-group-news-1 :bold nil)
-               (gnus-group-news-2 :foreground ,dracula-cyan :bold t)
-               (gnus-group-news-2-empty :inherit gnus-group-news-2 :bold nil)
-               (gnus-group-news-3 :foreground ,dracula-comment :bold t)
-               (gnus-group-news-3-empty :inherit gnus-group-news-3 :bold nil)
+               (gnus-group-mail-1 :foreground ,dracula-pink :weight bold)
+               (gnus-group-mail-1-empty :inherit gnus-group-mail-1 :weight normal)
+               (gnus-group-mail-2 :foreground ,dracula-cyan :weight bold)
+               (gnus-group-mail-2-empty :inherit gnus-group-mail-2 :weight normal)
+               (gnus-group-mail-3 :foreground ,dracula-comment :weight bold)
+               (gnus-group-mail-3-empty :inherit gnus-group-mail-3 :weight normal)
+               (gnus-group-mail-low :foreground ,dracula-current :weight bold)
+               (gnus-group-mail-low-empty :inherit gnus-group-mail-low :weight normal)
+               (gnus-group-news-1 :foreground ,dracula-pink :weight bold)
+               (gnus-group-news-1-empty :inherit gnus-group-news-1 :weight normal)
+               (gnus-group-news-2 :foreground ,dracula-cyan :weight bold)
+               (gnus-group-news-2-empty :inherit gnus-group-news-2 :weight normal)
+               (gnus-group-news-3 :foreground ,dracula-comment :weight bold)
+               (gnus-group-news-3-empty :inherit gnus-group-news-3 :weight normal)
                (gnus-group-news-4 :inherit gnus-group-news-low)
                (gnus-group-news-4-empty :inherit gnus-group-news-low-empty)
                (gnus-group-news-5 :inherit gnus-group-news-low)
                (gnus-group-news-5-empty :inherit gnus-group-news-low-empty)
                (gnus-group-news-6 :inherit gnus-group-news-low)
                (gnus-group-news-6-empty :inherit gnus-group-news-low-empty)
-               (gnus-group-news-low :foreground ,dracula-current :bold t)
-               (gnus-group-news-low-empty :inherit gnus-group-news-low :bold nil)
+               (gnus-group-news-low :foreground ,dracula-current :weight bold)
+               (gnus-group-news-low-empty :inherit gnus-group-news-low :weight normal)
                (gnus-header-content :foreground ,dracula-pink)
                (gnus-header-from :foreground ,dracula-fg)
                (gnus-header-name :foreground ,dracula-purple)
-               (gnus-header-subject :foreground ,dracula-green :bold t)
+               (gnus-header-subject :foreground ,dracula-green :weight bold)
                (gnus-summary-markup-face :foreground ,dracula-cyan)
                (gnus-summary-high-unread :foreground ,dracula-pink :weight bold)
                (gnus-summary-high-read :inherit gnus-summary-high-unread :weight normal)
@@ -187,11 +191,14 @@
                ;; icomplete
                (icompletep-determined :foreground ,dracula-orange)
                ;; ido
-               (ido-first-match :foreground ,dracula-pink :bold t)
+               (ido-first-match :foreground ,dracula-pink :weight bold)
                (ido-only-match :foreground ,dracula-orange)
                (ido-subdir :foreground ,dracula-orange)
+               (ido-virtual :foreground ,dracula-cyan)
+               (ido-incomplete-regexp :inherit font-lock-warning-face)
+               (ido-indicator :foreground ,dracula-fg :background ,dracula-pink)
                ;; isearch
-               (isearch :bold t :foreground ,dracula-orange :background ,bg3)
+               (isearch :weight bold :foreground ,dracula-orange :background ,bg3)
                (isearch-fail :foreground ,dracula-bg :background ,dracula-orange)
                ;; jde-java
                (jde-java-font-lock-constant-face :foreground ,dracula-cyan)
@@ -230,14 +237,27 @@
                (magit-process-ok :foreground ,dracula-green :weight bold)
                (magit-section-heading :foreground ,dracula-pink :weight bold)
                (magit-section-highlight :background ,bg2)
+               ;; message
+               (message-mml :foreground ,dracula-green :weight normal)
+               (message-header-xheader :foreground ,dracula-cyan :weight normal)
                ;; mode-line
                (mode-line :foreground nil :background ,dracula-current :box ,dracula-current)
                (mode-line-inactive :foreground ,dracula-fg :background ,bg2 :box ,bg2)
                ;; mu4e
-               (mu4e-cited-1-face :foreground ,fg2)
-               (mu4e-cited-7-face :foreground ,fg3)
-               (mu4e-header-marks-face :foreground ,dracula-purple)
+               (mu4e-unread-face :foreground ,dracula-pink :weight normal)
                (mu4e-view-url-number-face :foreground ,dracula-purple)
+               (mu4e-highlight-face :background ,dracula-bg
+                                    :foreground ,dracula-yellow)
+               (mu4e-header-highlight-face :background ,dracula-current
+                                           :foreground ,dracula-fg
+                                           :underline nil :weight bold)
+               (mu4e-header-key-face :inherit message-mml)
+               (mu4e-header-marks-face :foreground ,dracula-purple)
+               (mu4e-cited-1-face :foreground ,dracula-purple)
+               (mu4e-cited-2-face :foreground ,dracula-orange)
+               (mu4e-cited-3-face :foreground ,dracula-comment)
+               (mu4e-cited-4-face :foreground ,fg2)
+               (mu4e-cited-5-face :foreground ,fg3)
                ;; org
                (org-agenda-date :foreground ,dracula-cyan :underline nil)
                (org-agenda-dimmed-todo-face :foreground ,dracula-comment)
@@ -255,16 +275,16 @@
                (org-ellipsis :foreground ,dracula-comment)
                (org-footnote :foreground ,other-blue)
                (org-formula :foreground ,dracula-pink)
-               (org-headline-done :foreground ,dracula-comment :bold nil :strike-through t)
+               (org-headline-done :foreground ,dracula-comment :weight normal :strike-through t)
                (org-hide :foreground ,dracula-bg :background ,dracula-bg)
                (org-level-1 :inherit bold :foreground ,dracula-pink :height 1.3)
                (org-level-2 :inherit bold :foreground ,dracula-purple :height 1.1)
-               (org-level-3 :bold nil :foreground ,dracula-green :height 1.0)
-               (org-level-4 :bold nil :foreground ,dracula-yellow)
-               (org-level-5 :bold nil :foreground ,dracula-cyan)
-               (org-level-6 :bold nil :foreground ,dracula-orange)
-               (org-level-7 :bold nil :foreground ,other-blue)
-               (org-level-8 :bold nil :foreground ,dracula-fg)
+               (org-level-3 :weight normal :foreground ,dracula-green :height 1.0)
+               (org-level-4 :weight normal :foreground ,dracula-yellow)
+               (org-level-5 :weight normal :foreground ,dracula-cyan)
+               (org-level-6 :weight normal :foreground ,dracula-orange)
+               (org-level-7 :weight normal :foreground ,other-blue)
+               (org-level-8 :weight normal :foreground ,dracula-fg)
                (org-link :foreground ,dracula-cyan :underline t)
                (org-priority :foreground ,dracula-cyan)
                (org-scheduled :foreground ,dracula-green)
@@ -273,8 +293,8 @@
                (org-sexp-date :foreground ,fg4)
                (org-special-keyword :foreground ,dracula-yellow)
                (org-table :foreground ,dracula-purple)
-               (org-tag :foreground ,dracula-pink :bold t :background ,bg2)
-               (org-todo :foreground ,dracula-orange :bold t :background ,bg2)
+               (org-tag :foreground ,dracula-pink :weight bold :background ,bg2)
+               (org-todo :foreground ,dracula-orange :weight bold :background ,bg2)
                (org-upcoming-deadline :foreground ,dracula-yellow)
                (org-warning :weight bold :foreground ,dracula-pink)
                ;; outline
@@ -340,13 +360,14 @@
                (web-mode-function-name-face :inherit ,font-lock-function-name-face)
                (web-mode-html-attr-name-face :foreground ,dracula-purple)
                (web-mode-html-attr-value-face :foreground ,dracula-green)
-               (web-mode-html-tag-face :foreground ,dracula-pink :bold t)
+               (web-mode-html-tag-face :foreground ,dracula-pink :weight bold)
                (web-mode-keyword-face :foreground ,dracula-pink)
                (web-mode-string-face :foreground ,dracula-yellow)
                (web-mode-type-face :inherit ,font-lock-type-face)
                (web-mode-warning-face :inherit ,font-lock-warning-face)
                ;; which-func
                (which-func :inherit ,font-lock-function-name-face)
+               ;; dired
                (dired-directory :foreground ,dracula-green :weight normal)
                (dired-flagged :foreground ,dracula-pink)
                (dired-header :foreground ,fg3 :background ,dracula-bg)
@@ -383,6 +404,7 @@
                (diredp-link-priv :foreground ,dracula-orange)
                (diredp-autofile-name :foreground ,dracula-yellow)
                (diredp-tagged-autofile-name :foreground ,dracula-yellow)
+               ;; icicle
                (icicle-whitespace-highlight :background ,dracula-fg)
                (icicle-special-candidate :foreground ,fg2)
                (icicle-extra-candidate :foreground ,fg2)
@@ -445,6 +467,7 @@
 
 ;; Local Variables:
 ;; no-byte-compile: t
+;; indent-tabs-mode: nil
 ;; End:
 
 ;;; dracula-theme.el ends here

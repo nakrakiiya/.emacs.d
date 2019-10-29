@@ -1,11 +1,11 @@
-;;; faff-theme-autoloads.el --- automatically extracted autoloads
+;;; dracula-theme-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "faff-theme" "faff-theme.el" (23991 6581 155442
-;;;;;;  560000))
-;;; Generated autoloads from faff-theme.el
+;;;### (autoloads nil "dracula-theme" "dracula-theme.el" (23991 36408
+;;;;;;  361540 704000))
+;;; Generated autoloads from dracula-theme.el
 
 (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
 
@@ -16,4 +16,4 @@
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
 ;; End:
-;;; faff-theme-autoloads.el ends here
+;;; dracula-theme-autoloads.el ends here
