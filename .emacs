@@ -1,3 +1,17 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Notes: OCaml, Coq (maybe more packages)
+;; opam install merlin
+;; opam install tuareg
+;;
+;; # update emacs configurations
+;; opam user-setup install      
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 
